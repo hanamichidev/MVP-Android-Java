@@ -1,0 +1,154 @@
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <ProgressBar
+        android:id="@+id/pb_cast_loadings"
+        style="@style/Base.Widget.AppCompat.ProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"/>
+    <!-- Card for Movie overview -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_movie_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/card_elevation"
+        app:cardCornerRadius="@dimen/card_album_radius">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp">
+
+            <LinearLayout
+                android:id="@+id/ll_rating_and_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/card_content_padding"
+                android:weightSum="1">
+
+                <TextView
+                    android:id="@+id/nombredetail"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="0.5"
+                    android:drawablePadding="5dp"
+                    android:drawableLeft="@drawable/ic_personaje"
+                    android:gravity="center_horizontal"
+                    android:textSize="@dimen/movie_title_size" />
+
+
+                <TextView
+                    android:id="@+id/statusdetail"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_weight="0.5"
+                    android:drawablePadding="5dp"
+                    android:drawableLeft="@drawable/ic_capitulos"
+                    android:gravity="center_horizontal"
+                    android:textSize="@dimen/movie_title_size" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!--Billed cast cardview -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_production_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/card_margin"
+        android:elevation="@dimen/card_elevation"
+        app:cardCornerRadius="@dimen/card_album_radius">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/tv_cast_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:ellipsize="end"
+                android:maxLines="12"
+                android:text="Episodios (Desliza a la derecha para ver mas episodios):"
+                android:textColor="@color/colorTitle"
+                android:textSize="@dimen/movie_title_size"
+                android:textStyle="bold"
+                android:typeface="sans" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_cast_title">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_cast"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@null"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <!--Movie details cardview -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_images"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/card_margin"
+        android:elevation="@dimen/card_elevation"
+        app:cardCornerRadius="@dimen/card_album_radius">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/imgDetails"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_imagen" />
+
+            <TextView
+                android:id="@+id/tv_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Detalles"
+                android:textColor="@color/colorTitle"
+                android:textSize="@dimen/movie_title_size"
+                android:textStyle="bold"
+                android:typeface="sans" />
+
+            <TextView
+                android:id="@+id/genderdetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/homepage"
+                android:textColor="@color/colorTitle"
+                android:textSize="@dimen/overview_text_size"
+                android:typeface="sans" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
