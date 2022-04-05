@@ -1,5 +1,3 @@
-# Prueba Ing. Emmanuel Cruz Reyes
-
 ## API Consumida Dentro del Proyecto
 
 La API consumida dentro del proyecto fue la indicada segun los requermientos https://rickandmortyapi.com
